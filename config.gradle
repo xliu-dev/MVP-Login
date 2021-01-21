@@ -1,0 +1,65 @@
+ext {
+    android = [
+            compileSdkVersion    : 30,
+            buildToolsVersion    : "30.0.3",
+            minSdkVersion        : 26,
+            targetSdkVersion     : 30,
+            versionCode          : 1,
+            versionName          : "1.0.0",
+            androidJUnitRunner   : "android.support.test.runner.AndroidJUnitRunner",
+            multiDexEnabled      : true,
+            consumerProguardFiles: "consumer-rules.pro",
+    ]
+
+    version = [
+            espressoSdkVersion          : "3.3.0",
+            rxlifecycle2SdkVersion      : "2.2.1",
+            retrofitSdkVersion          : "2.4.0",
+            glideSdkVersion             : "4.6.1",
+            butterknifeSdkVersion       : "8.8.1",
+    ]
+
+    dependencies = [
+            // test
+            "junit"                     : "junit:junit:4.12",
+            "test-junit"                : "androidx.test.ext:junit:1.1.2",
+            "espresso-core"             : "androidx.test.espresso:espresso-core:${version["espressoSdkVersion"]}",
+
+            // androidx
+            "appcompat"                 : "androidx.appcompat:appcompat:1.2.0",
+            "coordinatorlayout"         : 'androidx.coordinatorlayout:coordinatorlayout:1.1.0',
+            "constraint-layout"         : "androidx.constraintlayout:constraintlayout:2.0.4",
+
+            // rx
+            "rxjava2"                   : "io.reactivex.rxjava2:rxjava:2.2.2",
+            "rxandroid2"                : "io.reactivex.rxjava2:rxandroid:2.1.0",
+            "rxcache2"                  : "com.github.VictorAlbertos.RxCache:runtime:1.8.3-2.x",
+            "rxcache-jolyglot-gson"     : "com.github.VictorAlbertos.Jolyglot:gson:0.0.4",
+            "rxlifecycle2"              : "com.trello.rxlifecycle2:rxlifecycle:${version["rxlifecycle2SdkVersion"]}",
+            "rxlifecycle2-android"      : "com.trello.rxlifecycle2:rxlifecycle-android:${version["rxlifecycle2SdkVersion"]}",
+            "rxlifecycle2-components"   : "com.trello.rxlifecycle2:rxlifecycle-components:${version["rxlifecycle2SdkVersion"]}",
+            "rxpermissions"             : "com.github.tbruyelle:rxpermissions:0.10.2",
+
+            // network
+            "retrofit"                  : "com.squareup.retrofit2:retrofit:${version["retrofitSdkVersion"]}",
+            "retrofit-converter-gson"   : "com.squareup.retrofit2:converter-gson:${version["retrofitSdkVersion"]}",
+            "retrofit-adapter-rxjava2"  : "com.squareup.retrofit2:adapter-rxjava2:${version["retrofitSdkVersion"]}",
+            "okhttp3"                   : "com.squareup.okhttp3:okhttp:3.10.0",
+            "okhttp-logging-interceptor": "com.squareup.okhttp3:logging-interceptor:3.10.0",
+            "glide"                     : "com.github.bumptech.glide:glide:${version["glideSdkVersion"]}",
+            "glide-compiler"            : "com.github.bumptech.glide:compiler:${version["glideSdkVersion"]}",
+
+            // view
+            "butterknife"               : "com.jakewharton:butterknife:${version["butterknifeSdkVersion"]}",
+            "baseadapter"               : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.6',
+
+            // tools
+            "javax.annotation"          : "javax.annotation:jsr250-api:1.0",
+            "multidex"                  : "com.android.support:multidex:1.0.3",
+            "gson"                      : "com.google.code.gson:gson:2.8.5",
+            "eventbus"                  : "org.greenrobot:eventbus:3.1.1",
+            "logger"                    : "com.orhanobut:logger:2.2.0",
+            "timber"                    : "com.jakewharton.timber:timber:4.7.0",
+    ]
+
+}

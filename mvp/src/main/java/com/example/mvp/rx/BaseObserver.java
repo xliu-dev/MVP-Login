@@ -50,17 +50,30 @@ public abstract class BaseObserver<T extends BaseBean> extends ResourceObserver<
         }
     }
 
+//    @Override
+//    public void onNext(T t) {
+//        mView.hideLoading();
+//        if (t.getErrorCode() == HttpStatus.SUCCESS) {
+//            onSuccess(t);
+//        } else if (t.getErrorCode() == HttpStatus.TOKEN_INVALID) {
+//            // TODO 处理 token 过期
+//        } else {
+//            onError(t);
+//            if (!t.getErrorMsg().isEmpty()) {
+//                mView.showDefaultMsg(t.getErrorMsg());
+//            }
+//        }
+//    }
+
     @Override
     public void onNext(T t) {
         mView.hideLoading();
-        if (t.getErrorCode() == HttpStatus.SUCCESS) {
+        if (t.isSuccess()) {
             onSuccess(t);
-        } else if (t.getErrorCode() == HttpStatus.TOKEN_INVALID) {
-            // TODO 处理 token 过期
         } else {
             onError(t);
-            if (!t.getErrorMsg().isEmpty()) {
-                mView.showDefaultMsg(t.getErrorMsg());
+            if (!t.getMsg().isEmpty()) {
+                mView.showDefaultMsg(t.getMsg());
             }
         }
     }

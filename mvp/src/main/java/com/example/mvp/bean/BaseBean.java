@@ -4,34 +4,34 @@ import java.io.Serializable;
 
 public class BaseBean<T> implements Serializable {
 
-    private int errorCode;
-    private String errorMsg;
+    private boolean success;
+    private String msg;
     private T data;
 
 
     public BaseBean() {
     }
 
-    public BaseBean(int errorCode, String errorMsg, T data) {
-        this.errorCode = errorCode;
-        this.errorMsg = errorMsg;
+    public BaseBean(boolean success, String msg, T data) {
+        this.success = success;
+        this.msg = msg;
         this.data = data;
     }
 
-    public int getErrorCode() {
-        return errorCode;
+    public boolean isSuccess() {
+        return success;
     }
 
-    public void setErrorCode(int errorCode) {
-        this.errorCode = errorCode;
+    public void setSuccess(boolean success) {
+        this.success = success;
     }
 
-    public String getErrorMsg() {
-        return errorMsg;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setErrorMsg(String errorMsg) {
-        this.errorMsg = errorMsg;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
     public T getData() {
@@ -45,10 +45,9 @@ public class BaseBean<T> implements Serializable {
     @Override
     public String toString() {
         return "BaseBean{" +
-                "errorCode=" + errorCode +
-                ", errorMsg='" + errorMsg + '\'' +
+                "success=" + success +
+                ", msg='" + msg + '\'' +
                 ", data=" + data +
                 '}';
     }
-
 }
